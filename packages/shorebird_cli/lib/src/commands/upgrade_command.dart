@@ -69,7 +69,9 @@ class UpgradeCommand extends ShorebirdCommand with ShorebirdVersionMixin {
       return ExitCode.software.code;
     }
 
-    updateProgress.complete('Updated successfully.');
+    updateProgress
+      ..complete('Updated successfully.')
+      ..complete('You are now on version: $latestVersion.');
 
     return ExitCode.success.code;
   }
